@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-3 mx-auto">
+    <h1>編集する</h1>
+    <%= form_with model:@to_do, local:true do |f| %>
+    <div class="mb-3">
+      <%= f.text_field :day %>
+    </div>
+
+    <div class="mb-3">
+     <%= f.text_area :body %>
+    </div>
+    <div class="mb-3">
+      <%= f.submit '保存',class: "btn btn-primary" %>
+    </div>
+    </div>
+    <% end %>
+  </div>
+</div>

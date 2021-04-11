@@ -1,11 +1,13 @@
 <div class="container mt-5">
   <div class="row">
-    <div class="col-3">
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    <div class="col-4">
+      <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target="#exampleModal">
         することを登録する
 　　　</button>
+
+　　　<%= link_to "全員のすることリストを確認する", to_dos_path,class: "btn btn-info" %>
     </div>
-    <div class="col-5 to_dos">
+    <div class="col-7 to_dos">
       <%= render 'to_dos/to_dos',to_dos: @to_dos %>
     </div>
   </div>

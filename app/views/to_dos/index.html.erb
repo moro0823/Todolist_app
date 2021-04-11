@@ -1,2 +1,34 @@
-<h1>ToDos#index</h1>
-<p>Find me in app/views/to_dos/index.html.erb</p>
+<div class ="container">
+  <div class ="row">
+    <div class ="col-2">
+      <%=link_to"マイページに戻る",user_path(current_user) %>
+    </div>
+    <div class ="col-10 mx-auto">
+        <table class="table">
+       <% @to_dos. each do |to_do| %>
+      <thead>
+      <tr class="table-info">
+       <th scope="col">期日</th>
+       <th scope="col">誰がするのか</th>
+       <th scope="col">すること</th>
+       <th scope="col">削除</th>
+      </tr>
+  </thead>
+  <tbody>
+     <tr scope="row">
+      <td><%=to_do.day %></td>
+      <td><%=to_do.user.name %></td>
+      <td><%=to_do.body %></td>
+      <td><%= link_to "削除",to_do_path(to_do.id), method: :delete, local: true,class: "btn btn-danger","data-confirm" => "本当に削除しますか？" %></td>
+     </tr>
+
+  </tbody>
+  <% end %>
+ </table>
+      
+      
+      
+    </div>
+
+  </div>
+</div>

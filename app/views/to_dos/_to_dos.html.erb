@@ -2,12 +2,12 @@
 
  <div class ="card mb-1">
   <div class="card-body">
-   <p class="card-text">期限：  <%=to_do.day %>  まで</p>
+   <h4 class="card-text">期限：  <%=to_do.day %>  まで</h4>
    <p class="card-text"><%=simple_format to_do.body %></p>
    <p class="card-text">
-       <%= link_to "編集",edit_to_do_path(to_do.id),remote: true %>
-　 </p>
-   <p class="card-text"><%= link_to "削除",to_do_path(to_do.id), method: :delete, remote: true %></p>
+      <%= link_to "編集",edit_to_do_path(to_do.id),local: true, class: "btn btn-success" %>
+   <span class="card-text"><%= link_to "削除",to_do_path(to_do.id), method: :delete, remote: true,class: "btn btn-danger","data-confirm" => "本当に削除しますか？" %></span>
+   </p>
   </div>
  </div>
 <% end %>
