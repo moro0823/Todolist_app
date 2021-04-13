@@ -1,0 +1,24 @@
+    <div class ="col-10 mx-auto">
+        <table class="table">
+       <% @results. each do |to_do| %>
+      <thead>
+      <tr class="table-info">
+       <th scope="col">期日</th>
+       <th scope="col">誰がするのか</th>
+       <th scope="col">すること</th>
+       <th scope="col">削除</th>
+      </tr>
+  </thead>
+  <tbody>
+     <tr scope="row">
+      <td><%=to_do.day %></td>
+      <td><%=to_do.user.name %></td>
+      <td><%=to_do.body %></td>
+      <td><%= link_to "削除",to_do_path(to_do.id), method: :delete, local: true,class: "btn btn-danger","data-confirm" => "本当に削除しますか？" %></td>
+     </tr>
+
+  </tbody>
+  <% end %>
+ </table>
+
+ <%= link_to "すること一覧",to_dos_path %>
